@@ -3,11 +3,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:username] = params[:username]
-    redirect_to '/'
+    if !params[:name] || params[:name].empty?
+      redirect_to login_path
+    else
+      session[:name] = params[:name]
+      redirect_to root_path
   end
 
   def destroy
     seesion.delete :username
+    redirect_to root_path
   end
 end
