@@ -7,6 +7,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    seesion.delete :username
   end
 end
