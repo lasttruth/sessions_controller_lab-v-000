@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    seesion.delete :username
+    session.delete :username
     redirect_to root_path
   end
 end
